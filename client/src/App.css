@@ -4,24 +4,25 @@
 }
 
 header h1 {
-	color: white;
+	color: gold;
 	padding: 2%;
 	font-size: 3rem;
   font-weight: bold;
-  -webkit-text-stroke: 2px royalblue;
+  -webkit-text-stroke: 2px tomato;
 }
 
 .card-container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+  justify-content: center;
+  color:tomato;
 }
 
 .btn{
   margin-bottom:1.5%;
 }
 
-/* .App{
-  background-color: black;
-} */
+.dark-mode{
+  background-color: rgb(51, 51, 51) !important;
+}
 /* class="card text-white card-body bg-primary" */

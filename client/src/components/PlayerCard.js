@@ -5,11 +5,7 @@ import styled from "styled-components";
 const PlayerCard = props => {
 	return (
 		<StyledSection>
-			<Card
-				body
-				inverse
-				color = "primary"
-			>
+			<Card body color="warning">
 				<CardTitle>
 					<h2>{props.player.name}</h2>
 				</CardTitle>
@@ -25,6 +21,6 @@ const PlayerCard = props => {
 export default PlayerCard;
 
 const StyledSection = styled(Card)`
-width:35%;
-margin:1%;
+	width: 35%;
+	margin: 1%;
 `;
