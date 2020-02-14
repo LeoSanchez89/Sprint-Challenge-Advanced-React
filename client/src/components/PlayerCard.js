@@ -5,7 +5,7 @@ import styled from "styled-components";
 const PlayerCard = props => {
 	return (
 		<StyledSection>
-			<Card body color="warning">
+			<Card data-testid="card" body color="warning">
 				<CardTitle>
 					<h2>{props.player.name}</h2>
 				</CardTitle>

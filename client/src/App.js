@@ -28,11 +28,11 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div className="App">
+			<div data-testid="return-div" className="App">
 				<header>
 					<h1>Most Googled Women's World Cup Players</h1>
 				</header>
-        <DarkMode />      
+        < DarkMode />      
 				<div className="card-container">
 					{this.state.players.map(player => {
 						return <PlayerCard player={player} key={player.id} />;
