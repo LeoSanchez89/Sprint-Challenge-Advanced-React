@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import axios from "axios";
+import "./App.css";
+import PlayerCard from "./components/PlayerCard";
+import DarkMode from "./components/DarkMode";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends React.Component {
+   
+	state = {
+		players: []
+	};
+
+	componentDidMount() {
+		axios
+			.get("http://localhost:5000/api/players")
+			.then(res => {
+				console.log(res.data);
+				this.setState({
+					players: res.data
+				});
+			})
+			.catch(err => {
+				console.log("error", err);
+			});
+	}
+
+	render() {
+		return (
+			<div data-testid="return-div" className="App">
+				<header>
+					<h1>Most Googled Women's World Cup Players</h1>
+				</header>
+        < DarkMode />      
+				<div className="card-container">
+					{this.state.players.map(player => {
+						return <PlayerCard player={player} key={player.id} />;
+					})}
+				</div>
+			</div>
+		);
+	}
 }
-
 export default App;
