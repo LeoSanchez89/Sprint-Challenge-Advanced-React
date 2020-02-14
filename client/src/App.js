@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./App.css";
 import PlayerCard from "./components/PlayerCard";
+import { Button } from "reactstrap";
 
 class App extends React.Component {
 	state = {
@@ -28,9 +29,13 @@ class App extends React.Component {
 				<header>
 					<h1>Most Googled Women's World Cup Players</h1>
 				</header>
-				{this.state.players.map(player => {
-					return <PlayerCard player={player} key={player.id} />;
-				})}
+        <Button outline color="warning">Dark Mode</Button>
+      
+				<div className="card-container">
+					{this.state.players.map(player => {
+						return <PlayerCard player={player} key={player.id} />;
+					})}
+				</div>
 			</div>
 		);
 	}
